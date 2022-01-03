@@ -9,11 +9,15 @@
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description, 
+    new {required="required"})
 
-    @Html.LabelFor(model => model.Category)
+    @Html.Label("Select Category")
     @Html.DropDownList("CategoryId")
 
-    <input type="submit" value="Add new item" class="btn btn-default" />
+    @Html.LabelFor(model => model.DueDate)
+    @Html.EditorFor(model => model.DueDate)
+
+    <input type="submit" value="Add new item" class="btn btn-lg btn-dark" />
 }
 <p>@Html.ActionLink("Show all items", "Index")</p>

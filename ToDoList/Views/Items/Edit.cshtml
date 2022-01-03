@@ -15,10 +15,16 @@
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
 
-    @Html.LabelFor(model => model.Category)
+    @Html.Label("Select category")
     @Html.DropDownList("CategoryId")
 
-    <input type="submit" value="Save" />
+    @Html.LabelFor(model => model.DueDate)
+    @Html.EditorFor(model => model.DueDate)
+
+    @Html.LabelFor(model => model.IsCompleted)
+    @Html.CheckBoxFor(model => model.IsCompleted)
+
+    <input type="submit" value="Save" class="btn btn-lg btn-dark"/>
 }
 
 <p>@Html.ActionLink("Back to list", "Index")</p>
